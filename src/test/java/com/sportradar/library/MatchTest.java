@@ -61,10 +61,30 @@ class MatchTest {
     }
 
     @Test
-    void getSummaryShouldReturnFormattedMatchScore() {
-        match.updateScore(2, 3);
-
-        assertEquals("TeamA 2 - TeamB 3", match.getSummary());
+    void summaryShouldContainCorrectHomeTeamName() {
+        MatchSummary summary = match.getSummary();
+        assertEquals("TeamA", summary.homeTeamName());
     }
+
+    @Test
+    void summaryShouldContainCorrectHomeTeamScore() {
+        match.updateScore(2, 3);
+        MatchSummary summary = match.getSummary();
+        assertEquals(2, summary.homeTeamScore());
+    }
+
+    @Test
+    void summaryShouldContainCorrectAwayTeamName() {
+        MatchSummary summary = match.getSummary();
+        assertEquals("TeamB", summary.awayTeamName());
+    }
+
+    @Test
+    void summaryShouldContainCorrectAwayTeamScore() {
+        match.updateScore(2, 3);
+        MatchSummary summary = match.getSummary();
+        assertEquals(3, summary.awayTeamScore());
+    }
+
 
 }

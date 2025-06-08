@@ -28,7 +28,11 @@ class Match {
         return homeTeam;
     }
 
-    public String getSummary() {
-        return this.getHomeTeam().getName() + " " + this.getHomeTeam().getScore() + " - " + this.getAwayTeam().getName() + " " + this.getAwayTeam().getScore();
+    public MatchSummary getSummary() {
+        return new MatchSummary(
+                this.getHomeTeam().getName(),
+                this.getHomeTeam().getScore(),
+                this.getAwayTeam().getName(),
+                this.getAwayTeam().getScore());
     }
 }
