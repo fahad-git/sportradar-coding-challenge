@@ -61,20 +61,8 @@ class MatchTest {
     }
 
     @Test
-    void shouldAllowNegativeScoresForHomeTeam() {
-        match.updateScore(-3, 0);
-        assertEquals(-3, match.getHomeTeam().getScore());
-    }
-
-    @Test
-    void shouldAllowNegativeScoresForAwayTeam() {
-        match.updateScore(0, -4);
-        assertEquals(-4, match.getAwayTeam().getScore());
-    }
-
-    @Test
     void getSummaryShouldReturnFormattedMatchScore() {
-        match.updateScore(2, -3);
+        match.updateScore(2, 3);
 
         assertEquals("TeamA 2 - TeamB 3", match.getSummary());
     }

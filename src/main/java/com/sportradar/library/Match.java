@@ -1,5 +1,10 @@
 package com.sportradar.library;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 class Match {
 
     private final Team homeTeam;
@@ -23,17 +28,7 @@ class Match {
         return homeTeam;
     }
 
-    public Team getHomeTeam() {
-        return null;
-    }
-
-    public Team getAwayTeam() {
-        return null;
-    }
-
     public String getSummary() {
-
-        return "";
+        return this.getHomeTeam().getName() + " " + this.getHomeTeam().getScore() + " - " + this.getAwayTeam().getName() + " " + this.getAwayTeam().getScore();
     }
-
 }
