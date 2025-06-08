@@ -1,6 +1,10 @@
 package com.sportradar.library;
 
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 public class Team {
 
     private final String name;
@@ -9,16 +13,5 @@ public class Team {
     public Team(String name) {
         this.name = name;
         this.score = 0;
-    }
-
-    public String getName() {
-        return "";
-    }
-
-    public void setScore(int i) {
-    }
-
-    public int getScore() {
-        return -1;
     }
 }
